@@ -51,6 +51,7 @@ class ImagesController < ApplicationController
   # PATCH/PUT /images/1.json
   def update
     @image = Image.find(params[:id])
+
     respond_to do |format|
       if @image.update(image_params)
         format.html { redirect_to @image, notice: 'Image was successfully updated.' }
@@ -67,6 +68,7 @@ class ImagesController < ApplicationController
   def destroy
     @image = Image.find(params[:id])
     @image.destroy
+    redirect_to images_path
   end
 
   private
