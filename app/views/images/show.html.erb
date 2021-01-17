@@ -1,11 +1,26 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @image.description %>
+<p class="text-center">
+  <strong>Title:</strong> 
+  <%= @image.title %>
+  
 </p>
 
-<%=image_tag(@image.image)%>
+<div>
+  <p class="text-center">
+  <%=image_tag(@image.image)%>
+  </p>
+</div>
 
-<%= link_to 'Edit', edit_image_path(@image) %> |
-<%= link_to 'Back', images_path %>
+<br>
+<p class="text-center">
+<strong>Description:</strong>
+  <%= @image.description %>
+</p>
+<div>
+  <p class="h4 text-center" >
+  <%= link_to 'Edit', edit_image_path(@image) %> |
+  <%= link_to 'Back', images_path %> |
+  <%= link_to 'Delete', image_path(@image), :method => :delete, data: {confirm: "Are you sure?"}%>
+  </p>
+</div>

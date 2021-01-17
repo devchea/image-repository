@@ -11,18 +11,16 @@
 
 <div class="container-fluid">
     <div class="row">
-     <div class="col-5">
+     <div class="col-2">
     <%# show error message if no images found %>
     <% if @images.length === 0 %>
-    
     <h1 class="text-center">Image Not Found<br>Please Search Again</h1>
-    
     <% else @images.each do |image| %>   
         <div class="card">
             <img src="<%= url_for(image.image) %>" class="card-img-top" alt="<%= image.title %>">
                 <div class="card-body">
-                    <h5 class="card-title"><%= image.title %></h5>
-                    <p class="card-text"><%= image.description %></p>
+                    <h5 class="card-title text-center"><%= image.title %></h5>
+                    <p class="card-text text-left"><%= image.description %></p>
                 </div>
         </div>
         <% end %>
