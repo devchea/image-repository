@@ -1,6 +1,6 @@
 <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
   <div class="container-fluid">
-    <a class="navbar-brand">My Image Repo</a>
+    <%= link_to 'My Image Repo', images_path,class: 'navbar-brand'%>
     <%= link_to 'Upload New Image', new_image_path, class: "btn btn-outline-success"%>
     <%= form_tag images_search_path, method: :get do %>
     <%= text_field_tag :search, nil, placeholder: "Search", class: "form-control-me-2"%>
@@ -11,7 +11,7 @@
 
 <div class="container-fluid">
   <div class="row">
-    <div class="col-sm-3">
+    <div class="col-5">
     <% @images.each do |image| %>
       <div class="card">
         <img src="<%= url_for(image.image) %>" class="card-img-top" alt="<%= image.title %>">
