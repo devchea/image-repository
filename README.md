@@ -3,22 +3,22 @@
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
-Things you may want to cover:
+How to start:
 
-* Ruby version
+* Clone the repo, navigate to the folder, and run _bundle install_
 
-* System dependencies
+* Run _rails db:migrate_ to migrate create the database
 
-* Configuration
+* Run _rails webpacker:install_ to install webpacker
 
-* Database creation
+* In a browser, navigate to localhost:3000
 
-* Database initialization
+* Functionality: 
 
-* How to run the test suite
+    * How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+    * Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+    * Deployment instructions
 
-* ...
+    * ...
