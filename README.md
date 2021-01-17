@@ -1,8 +1,4 @@
 # README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
 How to start:
 
 * Clone the repo, navigate to the folder, and run _bundle install_
@@ -15,9 +11,8 @@ How to start:
 
 * Functionality: 
 
-    * How to run the test suite
-
-    * Services (job queues, cache servers, search engines, etc.)
+    * Ability to upload new pictures to the database and create a title and description for that picture
+         * Services (job queues, cache servers, search engines, etc.)
 
     * Deployment instructions
 
