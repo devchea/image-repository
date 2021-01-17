@@ -11,9 +11,7 @@ How to start:
 
 * Functionality: 
 
-    * Ability to upload new pictures to the database and create a title and description for that picture
-         * Services (job queues, cache servers, search engines, etc.)
+    * Ability to upload new image to the database and create a title and description for that image
+         * Can modify title and description, delete image after click into individual show page
 
-    * Deployment instructions
-
-    * ...
+    * Ability to search image title and description for matching search keyword
