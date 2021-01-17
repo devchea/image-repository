@@ -1,6 +1,7 @@
-<nav class="navbar navbar-dark bg-dark">
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
   <div class="container-fluid">
-    <a class="navbar-brand">Images</a>
+    <a class="navbar-brand">My Image Repo</a>
+    <%= link_to 'Upload New Image', new_image_path, class: "btn btn-outline-success"%>
     <%= form_tag images_search_path, method: :get do %>
     <%= text_field_tag :search, nil, placeholder: "Search", class: "form-control-me-2"%>
     <%= submit_tag "Search", class: "btn btn-outline-success"%>
@@ -9,24 +10,22 @@
 </nav>
 
 <div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-3">
+    <%# show error message if no images found %>
     <% if @images.length === 0 %>
-    <h1>Image Not Found</h1>
-    <% else @images.each do |image| %>
-      <div class="card">
-        <img src="<%= url_for(image.image) %>" class="card-img-top" alt="<%= image.title %>">
-        <div class="card-body">
-          <h5 class="card-title"><%= image.title %></h5>
-          <p class="card-text"><%= image.description %></p>
+    <h1 class="text-center">Image Not Found, Please Search Again</h1>
+    <div class="row">
+     <div class="col-sm-3">
+        <% else @images.each do |image| %>
+        <div class="card">
+            <img src="<%= url_for(image.image) %>" class="card-img-top" alt="<%= image.title %>">
+                <div class="card-body">
+                    <h5 class="card-title"><%= image.title %></h5>
+                    <p class="card-text"><%= image.description %></p>
+                </div>
         </div>
-      </div>
-    <% end %>
+        <% end %>
     <% end %>
     </div>
   </div>
 </div>
-
-<br>
-<%= link_to 'New Image', new_image_path %>
 

@@ -1,6 +1,7 @@
-<nav class="navbar navbar-dark bg-dark">
+<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
   <div class="container-fluid">
-    <a class="navbar-brand">Images</a>
+    <a class="navbar-brand">My Image Repo</a>
+    <%= link_to 'Upload New Image', new_image_path, class: "btn btn-outline-success"%>
     <%= form_tag images_search_path, method: :get do %>
     <%= text_field_tag :search, nil, placeholder: "Search", class: "form-control-me-2"%>
     <%= submit_tag "Search", class: "btn btn-outline-success"%>
@@ -23,7 +24,4 @@
     </div>
   </div>
 </div>
-
-<br>
-<%= link_to 'New Image', new_image_path %>
 
