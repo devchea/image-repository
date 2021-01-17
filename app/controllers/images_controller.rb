@@ -10,6 +10,7 @@ class ImagesController < ApplicationController
   # GET /images/1
   # GET /images/1.json
   def show
+    @image = Image.find(params[:id])
   end
 
   # GET /images/new
@@ -19,6 +20,10 @@ class ImagesController < ApplicationController
 
   # GET /images/1/edit
   def edit
+    @image = Image.find(params[:id])
+  end
+
+  def search
   end
 
   # POST /images
@@ -69,6 +74,6 @@ class ImagesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def image_params
-      params.require(:image).permit(:title, :description, :image)
+      params.require(:image).permit(:title, :description, :image, :search)
     end
 end
