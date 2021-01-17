@@ -1,10 +1,10 @@
 <nav class="navbar navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand">Images</a>
-    <form class="d-flex" action="/search">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
+    <%= form_tag images_search_path, method: :get do %>
+    <%= text_field_tag :search, nil, placeholder: "Search", class: "form-control-me-2"%>
+    <%= submit_tag "Search", class: "btn btn-outline-success"%>
+    <% end %>
   </div>
 </nav>
 

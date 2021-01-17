@@ -1,0 +1,32 @@
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand">Images</a>
+    <%= form_tag images_search_path, method: :get do %>
+    <%= text_field_tag :search, nil, placeholder: "Search", class: "form-control-me-2"%>
+    <%= submit_tag "Search", class: "btn btn-outline-success"%>
+    <% end %>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-3">
+    <% if @images.length === 0 %>
+    <h1>Image Not Found</h1>
+    <% else @images.each do |image| %>
+      <div class="card">
+        <img src="<%= url_for(image.image) %>" class="card-img-top" alt="<%= image.title %>">
+        <div class="card-body">
+          <h5 class="card-title"><%= image.title %></h5>
+          <p class="card-text"><%= image.description %></p>
+        </div>
+      </div>
+    <% end %>
+    <% end %>
+    </div>
+  </div>
+</div>
+
+<br>
+<%= link_to 'New Image', new_image_path %>
+

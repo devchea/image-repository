@@ -1,5 +1,5 @@
 class ImagesController < ApplicationController
-  before_action :set_image, only: [:show, :edit, :update, :destroy]
+  # before_action :set_image, only: [:show, :edit, :update, :destroy]
 
   # GET /images
   # GET /images.json
@@ -24,6 +24,11 @@ class ImagesController < ApplicationController
   end
 
   def search
+    if params[:search].blank?
+      @images = Image.all
+    else
+      @images = Image.search(params)
+    end
   end
 
   # POST /images
@@ -68,9 +73,9 @@ class ImagesController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-    def set_image
-      @image = Image.find(params[:id])
-    end
+    # def set_image
+    #   @image = Image.find(params[:search])
+    # end
 
     # Only allow a list of trusted parameters through.
     def image_params
